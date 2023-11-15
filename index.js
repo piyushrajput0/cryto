@@ -3,8 +3,6 @@ const app = express();
 const port = 3000
 var request = require('request'); //npm i request to get data from url
                                  // now you will not get its updates of this library("request")
-var multer = require('multer');
-var upload = multer();
 const bodyParser = require('body-parser');
 
 app.use(bodyParser.json()); // for parsing application/json
@@ -15,7 +13,6 @@ app.use(express.static(__dirname + '/public')); //__dirname is your current path
 app.set('view engine', 'ejs'); // for render we should have a template engine 
                                   //so we use ejs and al the files in view directory must 
                                 // use .ejs extension
-app.use(upload.array());
 
 let mData = ""
 let coinName = "bitcoin"
